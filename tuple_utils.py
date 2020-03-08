@@ -14,7 +14,7 @@ def tic_tac_toe_finish(board: TicTacToeBoard, pos_y: int, pos_x: int, symbol: st
     :param symbol: The symbol that should be placed in the column (X, or O)
     :return: None
     """
-    pass  # remove pass statement and implement me
+    board[pos_y][pos_x] = symbol
 
 
 def count_instances(collection: Tuple, instance: Union[int, str]) -> int:
@@ -25,12 +25,18 @@ def count_instances(collection: Tuple, instance: Union[int, str]) -> int:
     :param instance: An item in the collection parameter
     :return: An integer.
     """
-    pass  # remove pass statement and implement me
+    
+    myTuple = 0
+    for i in collection:
+        if i == instance:
+            myTuple = myTuple + 1
+    return myTuple
 
 
 def print_indexes_and_entries(indexes: Iterable, entries: Iterable) -> None:
     """
-    This function iterates through the given parameters and prints the items formatted according to the following rules:
+    This function iterates through the given parameters and prints the items formatted according 
+    to the following rules:
     The index of the indexes iterable correspond to the index of the entries iterable.
     The index takes 10 places even if it doesn't need all 10 places.
 
@@ -38,17 +44,22 @@ def print_indexes_and_entries(indexes: Iterable, entries: Iterable) -> None:
     :param entries: A list or tuple
     :return: None
     """
-    pass  # remove pass statement and implement me
+    
+    for x,y in zip(indexes, entries):
+        pair_1 = 'Index: ' + str(x)
+        pair_2 = 'Entry: ' + str(y)
+        print (pair_1 + ' '*(11 - len(str(x))) + pair_2)
 
 
 def print_items_with_index(items: Iterable):
     """
-    This function iterates through the items parameter and prints the item formatted according to the following rules:
+    This function iterates through the items parameter and prints the item formatted according 
+    to the following rules:
     Each item printed received the index 1-N where N is the size of the items parameter.
     Indexes start at 1.
     Each index and item are separated by a colon and a space.
     :param items: A tuple or a list
     :return: None
     """
-    pass  # remove pass statement and implement me
-
+    for item, element in enumerate(items, start = 1):
+        print(str(item) + ': ' + element)

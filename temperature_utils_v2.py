@@ -47,7 +47,23 @@ def temperature_tuple(temperatures: Iterable, input_unit_of_measurement: str) ->
             c.append((j, round(j*9/5+32, 2)))
         return tuple(c)
 
+    elif input_unit_of_measurement == 'k':
+        kel = []
+        for k in temperatures:
+            kel.append((k, round((k)+273.15)))
+        return tuple(kel)
+
     elif input_unit_of_measurement == 'a':
         return ()
 
+    f = temperature_tuple((32, 68, 100, 104), 'f')
+    print(f)
 
+    c = temperature_tuple((-17.7778, 0, 100), 'c')
+    print(c)
+
+    kel = temperature_tuple((-17.7778, 0, 100), 'k')
+    print(f)
+
+    f = temperature_tuple((1, 2, 3), 'a')
+    print(f)
