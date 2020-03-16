@@ -26,11 +26,11 @@ def count_instances(collection: Tuple, instance: Union[int, str]) -> int:
     :return: An integer.
     """
     
-    myTuple = 0
+    my_tuple = 0
     for i in collection:
         if i == instance:
-            myTuple = myTuple + 1
-    return myTuple
+            my_tuple = my_tuple + 1
+    return my_tuple
 
 
 def print_indexes_and_entries(indexes: Iterable, entries: Iterable) -> None:
@@ -45,7 +45,7 @@ def print_indexes_and_entries(indexes: Iterable, entries: Iterable) -> None:
     :return: None
     """
     
-    for x,y in zip(indexes, entries):
+    for x, y in zip(indexes, entries):
         pair_1 = 'Index: ' + str(x)
         pair_2 = 'Entry: ' + str(y)
         print (pair_1 + ' '*(11 - len(str(x))) + pair_2)

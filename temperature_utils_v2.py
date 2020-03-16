@@ -10,9 +10,10 @@ def convert_to_celsius(fahrenheit_temp: float) -> float:
     """
     
     celsius_temp = (fahrenheit_temp - 32) * 5 / 9
-    return round((celsius_temp), 2)
+    return round(celsius_temp, 2)
 
-def convert_to_fahrenheit(celsius_temp: float) -> int:
+
+def convert_to_fahrenheit(celsius_temp: float) -> float:
     """
     Given a float representing a temperature in celsius, return the corresponding value in fahrenheit.
 
@@ -20,8 +21,8 @@ def convert_to_fahrenheit(celsius_temp: float) -> int:
     :return:  A float representing the corresponding value of the celsius_temp parameter in fahrenheit
     """
     
-    fahrenheit_temp = celsius_temp*9/5 + 32
-    return round((fahrenheit_temp), 2)
+    fahrenheit_temp = celsius_temp * 9 / 5 + 32
+    return round(fahrenheit_temp, 2)
 
 
 def temperature_tuple(temperatures: Iterable, input_unit_of_measurement: str) -> Tuple[Tuple[float, float]]:
@@ -53,7 +54,7 @@ def temperature_tuple(temperatures: Iterable, input_unit_of_measurement: str) ->
             kel.append((k, round((k)+273.15)))
         return tuple(kel)
 
-    elif input_unit_of_measurement == 'a':
+    elif input_unit_of_measurement != 'f' or input_unit_of_measurement != 'c'or input_unit_of_measurement != 'k':
         return ()
 
     f = temperature_tuple((32, 68, 100, 104), 'f')
